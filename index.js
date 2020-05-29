@@ -53,7 +53,7 @@ client.on('message', message => {
 
     const filter = m => m.content.startsWith('!vote');
     // Errors: ['time'] treats ending because of the time limit as an error
-    channel.awaitMessages(filter, { max: 4, time: 60000, errors: ['time'] })
+    message.channel.awaitMessages(filter, { max: 4, time: 6000, errors: ['time'] })
         .then(collected => console.log(collected.size))
         .catch(collected => console.log(`After a minute, only ${collected.size} out of 4 voted.`));
 
