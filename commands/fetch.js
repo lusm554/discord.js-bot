@@ -4,7 +4,6 @@ module.exports = {
     onlyAdmin: true,
     invisible: true,
     async: true,
-	execute(message, args) {
-        return fetch('https://github.com/nnnnnnnnnniiiiiiiiiikkkkkkk');
+	execute(message, args) {fr
     }
 }
