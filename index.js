@@ -20,7 +20,7 @@ client.once('ready', () => {
      */
 
     client.user.setPresence({
-        status: "idle",  //You can show online, idle....
+        status: "online",  //You can show online, idle....
         activity: {
              name: "Spotify",  //The message shown
              type: "LISTENING" //PLAYING: WATCHING: LISTENING: STREAMING:
