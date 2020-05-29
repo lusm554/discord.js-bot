@@ -2,3 +2,8 @@ package-lock.json
 node_modules
 package.json
 config.json
+time.js 
+pic.js
+mes.js
+embed.js
+fetch.js
