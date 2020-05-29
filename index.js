@@ -37,25 +37,6 @@ client.once('ready', () => {
 // commands 
 client.on('message', message => {
 
-    // const filter = m => m.content.includes('discord');
-    // const collector = message.channel.createMessageCollector(filter, { time: 15000 });
-    
-    // collector.on('collect', m => {
-    //     console.log(`Collected ${m.content}`);
-    //     console.log(`start: ${ new Date() }\n`)
-    // });
-    
-    // collector.on('end', collected => {
-    //     console.log(`Collected ${collected.size} items`);
-    //     console.log(`end: ${ new Date() }\n`)
-    // });
-
-
-    const filter = m => m.content.startsWith('!vote');
-    // Errors: ['time'] treats ending because of the time limit as an error
-    message.channel.awaitMessages(filter, { max: 4, time: 6000, errors: ['time'] })
-        .then(collected => console.log(collected.size))
-        .catch(collected => console.log(`After a minute, only ${collected.size} out of 4 voted.`));
 
     try {
 
