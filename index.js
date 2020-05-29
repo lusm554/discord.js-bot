@@ -6,7 +6,7 @@ const client = new Discord.Client();
 
 client.once('ready', () => {
     console.log('Ready!');
-    console.log('Start work at '+new Date());
+    console.log(`Bot start: ${new Date()}\n`);
 
     /**
      * // for bot status
@@ -19,18 +19,18 @@ client.once('ready', () => {
      * });
      */
 
-    client.user.setPresence({
-        status: "online",  //You can show online, idle....
-        activity: {
-             name: "Spotify",  //The message shown
-             type: "LISTENING" //PLAYING: WATCHING: LISTENING: STREAMING:
-        }
-    });
+    // client.user.setPresence({
+    //     status: "online",  //You can show online, idle....
+    //     activity: {
+    //          name: "Spotify",  //The message shown
+    //          type: "LISTENING" //PLAYING: WATCHING: LISTENING: STREAMING:
+    //     }
+    // });
 
-    // client.user.setActivity('<code>', {
-    //     type: 'STREAMING',
-    //     url: 'https://www.twitch.tv/loveyousomuch455'
-    // })
+    client.user.setActivity('<code>', {
+        type: 'STREAMING',
+        url: 'https://www.twitch.tv/loveyousomuch455'
+    })
 });
 
 

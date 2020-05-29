@@ -12,8 +12,35 @@ module.exports = {
 		const emoji = client.emojis.cache;
 		const id_emojis = emoji.map(emoji => emoji.id);
 
-		let random_emoji = id_emojis[getNum(0, id_emojis.length-1)];
+		let random_emoji = id_emojis[ getNum(0, id_emojis.length-1) ];
 
+		// message.react(`${id_emojis[ getNum(0, id_emojis.length-1) ]}`);
+		// start test path
+
+
+		message.react('👍').then(() => message.react('👎'));
+
+		// const filter = (reaction, user) => {
+		// 	return ['👍', '👎'].includes(reaction.emoji.name) && user.id === message.author.id;
+		// };
+
+		// message.awaitReactions(filter , { max: 1, time: 60000, errors: ['time'] })
+		// 	.then(collected => {
+		// 		const reaction = collected.first();
+
+		// 		if (reaction.emoji.name === '👍') {
+		// 			// message.reply(' <3');
+		// 			message.channel.send(`${mentions} <3`);
+		// 		} else {
+		// 			// message.reply(' лайк поставил нахуй');
+		// 			message.channel.send(`${mentions} лайк поставил нахуй`);
+		// 		}
+		// 	})
+		// 	.catch(collected => {
+		// 		message.reply('you reacted with neither a thumbs up, nor a thumbs down.');
+		// 	});
+
+		// end test path
 
 		if (message.channel.type === 'dm') {
 
@@ -22,7 +49,7 @@ module.exports = {
 		}
 		else if (mentions.length > 0) {
 
-			message.channel.send(` ${test[getNum(0,test.length-1)]} ${mentions}`).then(() => {
+			message.channel.send(` ${test[getNum(0,test.length-1)]} ${mentions}`).then((elem) => {
 				message.channel.send(`${emoji.get(random_emoji)}`);
 			})
 			
