@@ -39,7 +39,7 @@ module.exports = {
 		// 	.catch(collected => {
 		// 		message.reply('you reacted with neither a thumbs up, nor a thumbs down.');
 		// 	});
-
+		// hi
 		// end test path
 
 		if (message.channel.type === 'dm') {
