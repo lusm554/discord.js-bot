@@ -35,8 +35,7 @@ client.once('ready', () => {
 
 
 // commands 
-client.on('message', message => {
-
+client.on('message', message => {   
 
     try {
 
