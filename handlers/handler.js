@@ -14,7 +14,7 @@ module.exports = {
         const commandFiles = fs.readdirSync('path to file/commands').filter(file => file.endsWith('.js')); // get all command files
 
         for (const file of commandFiles) {
-            const command = require(`path to file/commands/${file}`); // get command
+            const command = require(`/path to file/commands/${file}`); // get command
         
             // set a new item in the Collection
             // with the key as the command name and the value as the exported module

@@ -1,7 +1,7 @@
 // command for update
 module.exports = {
     name: 'info',
-	description: 'get info about bot',
+	description: 'get info about bot and his code',
 	// onlyAdmin: true,
     execute(message, args) {
 		const Discord = require('discord.js');
@@ -10,7 +10,7 @@ module.exports = {
 		const exampleEmbed = {
 			color: '#ff00f4',
 			title: 'Rofl bot',
-			url: 'https://github.com/nnnnnnnnnniiiiiiiiiikkkkkkk',
+			url: 'https://github.com/loveyousomuch554',
 			author: {
 				// name: 'Some name',
 				icon_url: 'https://i.imgur.com/viTH3hM.jpg',

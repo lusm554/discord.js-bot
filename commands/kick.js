@@ -4,6 +4,8 @@ module.exports = {
     guildOnly: true,
     args: true,
     usage: '<user>',
+    invisible: true,
+    onlyAdmin: true,
 	execute(message, args) {
 
         if (!message.mentions.users.size && !message.mentions.everyone) {
