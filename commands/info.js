@@ -45,6 +45,11 @@ module.exports = {
 					value: 'https://discord.com/oauth2/authorize?client_id=713523159126769716&permissions=0&scope=bot',
 					inline: false,
 				},
+				{
+					name: 'GitHub',
+					value: 'https://github.com/loveyousomuch554',
+					inline: false,
+				},
 			],
 			timestamp: new Date(),
 			footer: {
