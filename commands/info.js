@@ -5,7 +5,6 @@ module.exports = {
 	// onlyAdmin: true,
     execute(message, args) {
 		const Discord = require('discord.js');
-		// const photo = new Discord.MessageAttachment('https://i.imgur.com/viTH3hM.jpg'); // embed photo
 
 		const exampleEmbed = {
 			color: '#ff00f4',
@@ -58,8 +57,6 @@ module.exports = {
 			},
 		};
 
-
-		// message.channel.send({ files: [photo]}); // embed photo, this way i can send photo
 
 		message.channel.send({embed: exampleEmbed});
     }
