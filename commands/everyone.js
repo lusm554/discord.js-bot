@@ -2,7 +2,7 @@ module.exports = {
     name: 'everyone',
     description: 'just try it, use without '/!'/',
     cooldown: 500,
-    invisible: false,
+    invisible: true,
 	execute(message, args) {
         const {client} = require('../index.js');
 
@@ -14,7 +14,6 @@ module.exports = {
         let word = test[getNum(0, test.length-1)];
 
 
-
         const emoji = client.emojis.cache;
 		const id_emojis = emoji.map(emoji => emoji.id);
 
@@ -23,6 +22,11 @@ module.exports = {
         if (message.channel.type === 'dm') return;
         
 
-        message.channel.send(`${word} ${emoji.get(random_emoji)}`);
+        if(id_emojis > 0) {
+            message.channel.send(`${word} ${emoji.get(random_emoji)}`);
+        }
+        else {
+            message.channel.send(`${word}`)
+        }
     }
 }

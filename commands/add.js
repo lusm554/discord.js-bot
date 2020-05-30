@@ -4,7 +4,8 @@ module.exports = {
     usage: '\`<your phrase>\`',
     args: true,
     cooldown: 60,
-    // invisible: true,
+    invisible: true,
+    onlyAdmin: true,
 	execute(message, args) {
         const fs = require('fs');
         let json = require('../roflCommand.json');

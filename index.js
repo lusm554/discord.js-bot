@@ -30,7 +30,11 @@ client.once('ready', () => {
     client.user.setActivity('<code>', {
         type: 'STREAMING',
         url: 'https://www.twitch.tv/loveyousomuch455'
+<<<<<<< HEAD
     })
+=======
+    });
+>>>>>>> master
 });
 
 
