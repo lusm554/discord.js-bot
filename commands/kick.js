@@ -6,6 +6,10 @@ module.exports = {
     usage: '<user>',
 	execute(message, args) {
         const member = message.mentions.members.first();
+        const roles = message.author;
+
+        console.log(roles)
+        return;
 
         if (!message.mentions.users.size && !message.mentions.everyone) {
             return message.reply('you need to tag a user in order to kick them!');
@@ -19,9 +23,9 @@ module.exports = {
         else if( taggedUser.username === 'Who?') {
             return message.channel.send(`Ты кого хочешь кикнуть, хуйло?`);
         }
-        // else if (taggedUser.username === 'ᶠᶸᶜᵏᵧₒᵤ') {
-        //     return message.channel.send(`ахуел?`);
-        // } 
+        else if (taggedUser.username === 'ᶠᶸᶜᵏᵧₒᵤ') {
+            return message.channel.send(`ахуел?`);
+        } 
 
 
         // kick member
@@ -38,7 +42,7 @@ module.exports = {
 
 				if (reaction.emoji.name === '👍') {
 
-                    member.kick();
+                    // member.kick();
                     message.reply(` you kicked out ${member}`);
                     
 				} else {
