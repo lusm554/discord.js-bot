@@ -10,17 +10,6 @@ client.once('ready', () => {
     console.log('Ready!');
     console.log(`Bot start: ${new Date()}\n`);
 
-    /**
-     * // for bot status
-     * client.user.setPresence({
-     *     status: "online",  //You can show online, idle....
-     *     activity: {
-     *          name: "спит",  //The message shown
-     *          type: "LISTENING" //PLAYING: WATCHING: LISTENING: STREAMING:
-     *     }
-     * });
-     */
-
     // client.user.setPresence({
     //     status: "online",  //You can show online, idle....
     //     activity: {
@@ -28,23 +17,14 @@ client.once('ready', () => {
     //          type: "LISTENING" //PLAYING: WATCHING: LISTENING: STREAMING:
     //     }
     // });
-    // const activity = [{type: 'WATCHING', status: 'idle', name: 'porn'}, 
-    //             {type: 'LISTENING', status: 'online', name: 'Spotify'}, 
-    //             {type: 'STREAMING', name: '<code>'},
-    //             {type: 'STREAMING', name: '<life>'},
-    //             {type: 'STREAMING', name: '<something>'}];
-    
-    // function chanheStatus(activity) {
-    //     let currentActivity = activity[getNum(0, activity.length-1)];
 
-    //     client.user.setActivity(currentActivity.name, {
-    //         type: currentActivity.type,
-    //         url: 'https://www.twitch.tv/loveyousomuch455',
-    //     })
-    // }
+    let currentActivity = activity[getNum(0, activity.length-1)];
 
+    client.user.setActivity(currentActivity.name, {
+        type: currentActivity.type,
+        url: 'https://www.twitch.tv/loveyousomuch455',
+    }) 
 });
-// test 
 
 function chanheStatus(activity) {
     let currentActivity = activity[getNum(0, activity.length-1)];
@@ -58,8 +38,6 @@ function chanheStatus(activity) {
 setInterval(() => {
     chanheStatus(activity);
 }, (1,8e+6));
-
-// test 
 
 // commands 
 client.on('message', message => {   
