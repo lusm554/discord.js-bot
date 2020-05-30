@@ -42,6 +42,8 @@ module.exports = {
 		// hi
 		// end test path
 
+		console.log(random_emoji)
+
 		if (message.channel.type === 'dm') {
 
 			message.channel.send(` ${test[getNum(0,test.length-1)]} ${message.author}`);
@@ -50,14 +52,18 @@ module.exports = {
 		else if (mentions.length > 0) {
 
 			message.channel.send(` ${test[getNum(0,test.length-1)]} ${mentions}`).then((elem) => {
-				message.channel.send(`${emoji.get(random_emoji)}`);
+				if(random_emoji) {
+					message.channel.send(`${emoji.get(random_emoji)}`);
+				}
 			})
 			
 		}
 		else {
 
 			message.channel.send(` ${test[getNum(0,test.length-1)]} ${message.author}`).then(() => {
-				message.channel.send(`${emoji.get(random_emoji)}`);
+				if(random_emoji) {
+					message.channel.send(`${emoji.get(random_emoji)}`);
+				}
 			})
 
 		}

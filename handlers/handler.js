@@ -11,10 +11,10 @@ module.exports = {
         const cooldowns = new Discord.Collection(); // create collection for cooldowns of commands 
 
         
-        const commandFiles = fs.readdirSync('path to file/commands').filter(file => file.endsWith('.js')); // get all command files
+        const commandFiles = fs.readdirSync('/Users/pupkinvasa/Desktop/DiscordBot/commands').filter(file => file.endsWith('.js')); // get all command files
 
         for (const file of commandFiles) {
-            const command = require(`/path to file/commands/${file}`); // get command
+            const command = require(`/Users/pupkinvasa/Desktop/DiscordBot/commands/${file}`); // get command
         
             // set a new item in the Collection
             // with the key as the command name and the value as the exported module
