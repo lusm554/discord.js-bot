@@ -6,8 +6,6 @@ module.exports = {
 	execute(message, args) {
         const {client} = require('../index.js');
 
-        console.log(1)
-
         if(args.length>0) return;
 
         const {test} = require('../roflCommand.json');
