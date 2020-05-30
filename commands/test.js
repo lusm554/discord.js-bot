@@ -42,7 +42,7 @@ module.exports = {
 		// hi
 		// end test path
 
-		console.log(random_emoji)
+		// console.log(random_emoji)
 
 		if (message.channel.type === 'dm') {
 
