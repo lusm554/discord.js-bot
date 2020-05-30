@@ -1,6 +1,8 @@
 const Discord = require('discord.js');
 const { token } = require('./config.json');
 const { check } = require('./handlers/handler.js');
+const { getNum } = require('./functions.js');
+const { activity } = require('./roflCommand.json');
 
 const client = new Discord.Client();
 
@@ -26,16 +28,45 @@ client.once('ready', () => {
     //          type: "LISTENING" //PLAYING: WATCHING: LISTENING: STREAMING:
     //     }
     // });
+    // const activity = [{type: 'WATCHING', status: 'idle', name: 'porn'}, 
+    //             {type: 'LISTENING', status: 'online', name: 'Spotify'}, 
+    //             {type: 'STREAMING', name: '<code>'},
+    //             {type: 'STREAMING', name: '<life>'},
+    //             {type: 'STREAMING', name: '<something>'}];
+    
+    // function chanheStatus(activity) {
+    //     let currentActivity = activity[getNum(0, activity.length-1)];
 
-    client.user.setActivity('<code>', {
-        type: 'STREAMING',
-        url: 'https://www.twitch.tv/loveyousomuch455',
-    })
+    //     client.user.setActivity(currentActivity.name, {
+    //         type: currentActivity.type,
+    //         url: 'https://www.twitch.tv/loveyousomuch455',
+    //     })
+    // }
+
 });
+// test 
 
+function chanheStatus(activity) {
+    let currentActivity = activity[getNum(0, activity.length-1)];
+
+    client.user.setActivity(currentActivity.name, {
+        type: currentActivity.type,
+        url: 'https://www.twitch.tv/loveyousomuch455',
+    }) 
+}
+
+setInterval(() => {
+    chanheStatus(activity);
+}, (1,8e+6));
+
+// test 
 
 // commands 
 client.on('message', message => {   
+    client.user.setActivity('Spotify', {
+        type: 'LISTENING',
+        url: 'https://www.twitch.tv/loveyousomuch455',
+    })
 
     try {
 

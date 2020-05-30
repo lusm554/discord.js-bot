@@ -1,4 +1,28 @@
-{
+{ 
+  "activity": [
+    {
+      "type": "WATCHING",
+      "status": "idle",
+      "name": "porno"
+    },
+    {
+      "type": "LISTENING",
+      "status": "online",
+      "name": "Spotify"
+    },
+    {
+      "type": "STREAMING",
+      "name": "<code>"
+    },
+    {
+      "type": "STREAMING",
+      "name": "<life>"
+    },
+    {
+      "type": "STREAMING",
+      "name": "<something>"
+    }
+  ],
   "everyone": [
     "заебись вода",
     "не пиши сюда больше, от тебя гавной воняет",
