@@ -18,10 +18,10 @@ client.once('ready', () => {
     //     }
     // });
 
-    client.user.setActivity('>', {
-        type: 'LISTENING',
-        url: 'https://www.twitch.tv/loveyousomuch455',
-    }) 
+    // client.user.setActivity('>', {
+    //     type: 'LISTENING',
+    //     url: 'https://www.twitch.tv/loveyousomuch455',
+    // }) 
 });
 
 function chanheStatus(activity) {
@@ -37,7 +37,7 @@ function chanheStatus(activity) {
 
 setInterval(() => {
     chanheStatus(activity);
-}, (300000));
+}, (60000 * 30));
 
 // commands 
 client.on('message', message => {   
