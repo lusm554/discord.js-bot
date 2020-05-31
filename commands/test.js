@@ -9,7 +9,8 @@ module.exports = {
 
 		const mentions = message.mentions.users.map(user => `<@${user.id}>`);
 
-		const emoji = client.emojis.cache;
+		// const emoji = client.emojis.cache;
+		const emoji = message.guild.emojis.cache;
 		const id_emojis = emoji.map(emoji => emoji.id);
 
 		let random_emoji = id_emojis[ getNum(0, id_emojis.length-1) ];
