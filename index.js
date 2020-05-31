@@ -37,7 +37,7 @@ function chanheStatus(activity) {
 
 setInterval(() => {
     chanheStatus(activity);
-}, (1,8e+6));
+}, (10000));
 
 // commands 
 client.on('message', message => {   
