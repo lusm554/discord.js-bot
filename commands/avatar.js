@@ -1,6 +1,6 @@
 module.exports = {
     name: 'avatar',
-    description: 'you cab get url your avatar or any member',
+    description: 'you can get url your avatar or any member',
     aliases: ['icon','pfp'],
     usage: '\`<mentions user or nothing>\`',
     cooldown: 10,

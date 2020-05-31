@@ -18,10 +18,8 @@ client.once('ready', () => {
     //     }
     // });
 
-    let currentActivity = activity[getNum(0, activity.length-1)];
-
-    client.user.setActivity(currentActivity.name, {
-        type: currentActivity.type,
+    client.user.setActivity('>', {
+        type: 'LISTENING',
         url: 'https://www.twitch.tv/loveyousomuch455',
     }) 
 });
@@ -33,11 +31,13 @@ function chanheStatus(activity) {
         type: currentActivity.type,
         url: 'https://www.twitch.tv/loveyousomuch455',
     }) 
+
+    console.log('change activity: ' + currentActivity);
 }
 
 setInterval(() => {
     chanheStatus(activity);
-}, (10000));
+}, (300000));
 
 // commands 
 client.on('message', message => {   
