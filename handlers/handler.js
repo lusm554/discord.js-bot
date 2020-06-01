@@ -1,20 +1,21 @@
 module.exports = {
     check(message) {
         const fs = require('fs');
-        const { Discord, client} = require('./index.js');
-        const { prefix } = require('./config.json'); // for heroku
-        // const prefix = process.env.prefix;
+        const path = require('path');
+        const { Discord, client} = require('../index.js');
+        // const { prefix } = require('../config.json'); // for heroku
+        const prefix = process.env.prefix;
         const { execute: ch_mn} = require('./mentions.js');
-
     
         client.commands = new Discord.Collection(); // create collection for commands 
         const cooldowns = new Discord.Collection(); // create collection for cooldowns of commands 
+        const path_to_commands = path.normalize(`./commands`);
 
-
-        const commandFiles = fs.readdirSync(`./commands`).filter(file => file.endsWith('.js')); // get all command files
+        const commandFiles = fs.readdirSync(path_to_commands).filter(file => file.endsWith('.js')); // get all command files
 
         for (const file of commandFiles) {
-            const command = require(`./commands/${file}`); // get command
+            const path_to_file = path.normalize(`../commands/${file}`);
+            const command = require(path_to_file); // get command
         
             // set a new item in the Collection
             // with the key as the command name and the value as the exported module

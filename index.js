@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
-const { token } = require('./config.json'); // for heroku
-// const token = process.env.TOKEN;
-const { check } = require('./handler.js');
+// const { token } = require('./config.json'); // for heroku
+const token = process.env.TOKEN;
+const { check } = require('./handlers/handler.js');
 const { getNum } = require('./functions.js');
 const { activity } = require('./roflCommand.json');
 
