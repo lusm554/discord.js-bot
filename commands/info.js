@@ -41,7 +41,7 @@ module.exports = {
 				},
 				{
 					name: 'You can add a rofl bot to your server!',
-					value: 'https://discord.com/oauth2/authorize?client_id=713523159126769716&permissions=0&scope=bot',
+					value: 'https://discord.com/api/oauth2/authorize?client_id=713523159126769716&permissions=3155968&scope=bot',
 					inline: false,
 				},
 				{
