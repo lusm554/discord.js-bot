@@ -1,21 +1,20 @@
 module.exports = {
     check(message) {
         const fs = require('fs');
-        const { Discord, client} = require('../index.js');
-        // const { prefix } = require('../config.json'); // for heroku
-        const prefix = process.env.prefix;
+        const { Discord, client} = require('./index.js');
+        const { prefix } = require('./config.json'); // for heroku
+        // const prefix = process.env.prefix;
         const { execute: ch_mn} = require('./mentions.js');
 
     
         client.commands = new Discord.Collection(); // create collection for commands 
-        client.phrases = new Discord.Collection(); // create collection for rofl phrases
         const cooldowns = new Discord.Collection(); // create collection for cooldowns of commands 
 
-        
-        const commandFiles = fs.readdirSync('/Users/pupkinvasa/Desktop/DiscordBot/commands').filter(file => file.endsWith('.js')); // get all command files
+
+        const commandFiles = fs.readdirSync(`./commands`).filter(file => file.endsWith('.js')); // get all command files
 
         for (const file of commandFiles) {
-            const command = require(`/Users/pupkinvasa/Desktop/DiscordBot/commands/${file}`); // get command
+            const command = require(`./commands/${file}`); // get command
         
             // set a new item in the Collection
             // with the key as the command name and the value as the exported module
