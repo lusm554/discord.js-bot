@@ -2,7 +2,8 @@ module.exports = {
     check(message) {
         const fs = require('fs');
         const { Discord, client} = require('../index.js');
-        const { prefix } = require('../config.json');
+        // const { prefix } = require('../config.json'); // for heroku
+        const prefix = process.env.prefix;
         const { execute: ch_mn} = require('./mentions.js');
 
     
