@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # discrod.js-bot
 
 # Rofl Bot
