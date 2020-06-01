@@ -3,15 +3,14 @@ module.exports = {
         const fs = require('fs');
         const path = require('path');
         const { Discord, client} = require('../index.js');
-        const { prefix } = require('../config.json');
+        // const { prefix } = require('../config.json'); // for heroku
+        const prefix = process.env.prefix;
         const { execute: ch_mn} = require('./mentions.js');
-
     
         client.commands = new Discord.Collection(); // create collection for commands 
         const cooldowns = new Discord.Collection(); // create collection for cooldowns of commands 
         const path_to_commands = path.normalize(`./commands`);
 
-        
         const commandFiles = fs.readdirSync(path_to_commands).filter(file => file.endsWith('.js')); // get all command files
 
         for (const file of commandFiles) {
