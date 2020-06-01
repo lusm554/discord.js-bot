@@ -1,6 +1,5 @@
 node_modules
 package-lock.json
-package.json
 config.json
 time.js 
 pic.js
