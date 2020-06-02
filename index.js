@@ -3,6 +3,7 @@ const { token } = require('./config.json');
 const { check } = require('./handlers/handler.js');
 const { getNum } = require('./functions.js');
 const { activity } = require('./roflCommand.json');
+const { newsletter } = require('./handlers/newsletter.js');
 
 const client = new Discord.Client();
 
@@ -39,12 +40,15 @@ setInterval(() => {
     chanheStatus(activity);
 }, (60000 * 30));
 
+
 // commands 
-client.on('message', message => {   
+client.on('message', async message => {   
     client.user.setActivity('Spotify', {
         type: 'LISTENING',
         url: 'https://www.twitch.tv/loveyousomuch455',
     })
+
+    newsletter();
 
     try {
 
