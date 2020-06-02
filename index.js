@@ -48,7 +48,6 @@ client.on('message', async message => {
         url: 'https://www.twitch.tv/loveyousomuch455',
     })
 
-    newsletter();
 
     try {
 

@@ -15,30 +15,30 @@ module.exports = {
 
         for (const file of commandFiles) {
             const command = require(`/Users/pupkinvasa/Desktop/DiscordBot/commands/${file}`); // get command
-        
+            
+            console.log(command)
             // set a new item in the Collection
             // with the key as the command name and the value as the exported module
             client.commands.set(command.name, command);
         }
+        console.log(client.commands)
 
         // start message path
 
         const args = message.content.slice(prefix.length).split(/ +/); // get arguments from the message
         const commandName = args.shift().toLowerCase(); // get name of command
 
-
         if( ch_mn(message, args, commandName) && commandName=='test' ) {
             return message.reply(' куда летишь молодой?');
         }
  
-    
+
         const command = client.commands.get(commandName)
             || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName)); // get command file
 
-
         if (!command) return; // check for command 
 
-    
+        console.log(commandName, args)
         // if(command.invisible) return; // check for invisible
 
 
