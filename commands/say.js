@@ -1,6 +1,6 @@
 module.exports = {
     name: 'say',
-    description: '',
+    description: 'rofl command',
     guildOnly: true,
     execute(message, args) {
         const author = message.author.id;
