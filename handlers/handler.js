@@ -16,7 +16,7 @@ module.exports = {
         for (const file of commandFiles) {
             const path_to_file = path.normalize(`../commands/${file}`);
             const command = require(path_to_file); // get command
-        
+
             // set a new item in the Collection
             // with the key as the command name and the value as the exported module
             client.commands.set(command.name, command);
@@ -27,19 +27,16 @@ module.exports = {
         const args = message.content.slice(prefix.length).split(/ +/); // get arguments from the message
         const commandName = args.shift().toLowerCase(); // get name of command
 
-
         if( ch_mn(message, args, commandName) && commandName=='test' ) {
             return message.reply(' куда летишь молодой?');
         }
  
-    
+
         const command = client.commands.get(commandName)
             || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName)); // get command file
 
-
         if (!command) return; // check for command 
 
-    
         // if(command.invisible) return; // check for invisible
 
 
