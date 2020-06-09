@@ -41,6 +41,10 @@ setInterval(() => {
     chanheStatus(activity);
 }, (60000 * 30));
 
+client.on("guildCreate", guild => {
+    guild.owner.send('Thanks! You can use !help to discover commands.');
+ });
+
 
 // commands 
 client.on('message', async message => {   
