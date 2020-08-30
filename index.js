@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
-const { token } = require('./config.json');
+// const { token } = require('./config.json'); // for heroku
+const token = process.env.TOKEN;
 const { check } = require('./handlers/handler.js');
 const { getNum } = require('./functions.js');
 const { activity } = require('./roflCommand.json');
@@ -9,7 +10,6 @@ const client = new Discord.Client();
 
 client.once('ready', () => {
     console.log('Ready!');
-    console.log(`Bot start: ${new Date()}\n`);
 
     // client.user.setPresence({
     //     status: "online",  //You can show online, idle....
@@ -19,35 +19,15 @@ client.once('ready', () => {
     //     }
     // });
 
-    // client.user.setActivity('>', {
-    //     type: 'LISTENING',
-    //     url: 'https://www.twitch.tv/loveyousomuch455',
-    // }) 
-});
-
-function chanheStatus(activity) {
-    let currentActivity = activity[getNum(0, activity.length-1)];
-
-    client.user.setActivity(currentActivity.name, {
-        type: currentActivity.type,
+    client.user.setActivity('!help', {
+        type: 'STREAMING',
         url: 'https://www.twitch.tv/loveyousomuch455',
     }) 
-
-    console.log('change activity: ' + currentActivity);
-}
-
-setInterval(() => {
-    chanheStatus(activity);
-}, (60000 * 30));
+});
 
 
 // commands 
 client.on('message', async message => {   
-    client.user.setActivity('Spotify', {
-        type: 'LISTENING',
-        url: 'https://www.twitch.tv/loveyousomuch455',
-    })
-
 
     try {
 

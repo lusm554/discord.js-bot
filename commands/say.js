@@ -1,11 +1,16 @@
-exports.module = {
+module.exports = {
     name: 'say',
-    description: '',
+    description: 'rofl command',
     guildOnly: true,
-    exexute(message, args) {
-        const mentions = message.mentions.users.map(user => `<@${user.id}>`);
+    execute(message, args) {
         const author = message.author.id;
+        const mentions = message.mentions.users.filter(user => user.id!=author).map(user => `<@${user.id}>`);
 
-        message.channel.send(`${author} передал тебе: ${args.join(' ')} ${mentions}`);
+        if(mentions.length > 0) {
+            message.channel.send(`<@${author}> передал тебе: ${args.join(' ')}`);
+        }
+        else {
+            message.channel.send(`<@${author}> ${args.join(' ')}`);
+        }
     }
 }

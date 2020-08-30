@@ -1,0 +1,28 @@
+{
+  "name": "testroflbot",
+  "version": "1.0.0",
+  "description": "It's simple discord bot for fun &lt;3",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.2.0",
+    "discord.js-commando": "^0.10.0",
+    "node-opus": "^0.3.3",
+    "ytdl-core": "^2.1.5"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/loveyousomuch554/discrod.js-bot.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/loveyousomuch554/discrod.js-bot/issues"
+  },
+  "homepage": "https://github.com/loveyousomuch554/discrod.js-bot#readme"
+}
