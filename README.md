@@ -1,4 +1,4 @@
-# discrod.js-bot
+# discord.js-bot
 
 # Rofl Bot
 
