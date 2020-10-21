@@ -2,8 +2,6 @@
 
 # Rofl Bot
 
-Do not beat me for my bad code because this is my first project.
-
 I use [discord.js](https://discordjs.guide/) to make it.
 
 
